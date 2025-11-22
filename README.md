@@ -11,8 +11,7 @@ Simple todo list app built with React and Vite. Tasks are managed in React state
 ## Quick start
 
 1. Install dependencies
-```bash
-cd /Users/anishgurung/Desktop/todo-list
+
 npm install
 ```
 
