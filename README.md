@@ -1,16 +1,53 @@
-# React + Vite
+ Todo List (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple todo list app built with React and Vite. Tasks are managed in React state and persisted to localStorage.
 
-Currently, two official plugins are available:
+## Features
+- Add tasks
+- Toggle complete/incomplete
+- Delete tasks
+- Persisted in browser localStorage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick start
 
-## React Compiler
+1. Install dependencies
+```bash
+cd /Users/anishgurung/Desktop/todo-list
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Run development server (Vite)
+```bash
+npm run dev
+```
 
-## Expanding the ESLint configuration
+3. Build for production
+```bash
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Preview production build
+```bash
+npm run preview
+```
+
+## Project structure (src)
+
+- src/
+  - App.jsx — main app component: manages tasks, localStorage sync and renders the UI.
+  - App.css — main styling for the app.
+  - index.css — global CSS resets / base styles.
+  - main.jsx — React entry file (mounts App).
+  - assets/ — static assets (images, icons).
+  - components/
+    - TodoInput.jsx — input field + add button component.
+    - TodoList.jsx — renders list of tasks and handles empty state.
+    - TodoItem.jsx — single task item (toggle, delete UI).
+
+## Data persistence
+Tasks are stored in localStorage (key: `tasks`). Removing localStorage will clear saved tasks.
+
+## Where to extend
+- Add editing of tasks in TodoItem.jsx.
+- Add filters (all/active/completed) in App.jsx and TodoList.jsx.
+- Replace localStorage with backend sync.
